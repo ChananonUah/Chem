@@ -4013,8 +4013,8 @@ function find_element() {
       ans.Group = `${ans.Group}A`
     }
 
-    ans_show += `<p class="equation">ธาตุ : ${ans.Symbol} (${ans.Element})
-    &nbsp&nbsp&nbsp&nbsp&nbspเลขอะตอม : ${ans.AtomicNumber} เลขมวล : ${ans.AtomicMass} หมู่ : ${ans.Group} คาบ : ${ans.Period}</p>`
+    ans_show += `<p class="equation">{ ธาตุ : ${ans.Symbol} (${ans.Element}) } --
+    { เลขอะตอม : ${ans.AtomicNumber} } -- { เลขมวล : ${ans.AtomicMass} } -- { หมู่ : ${ans.Group} } -- { คาบ : ${ans.Period} }</p>`
 
     show_out.innerHTML = (ans_show);
 }
