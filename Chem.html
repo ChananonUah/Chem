@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Balancing Chemical Equations</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Pridi:wght@300&display=swap" rel="stylesheet">
+    <link href="style_2.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+</head>
+
+<body>
+    <header class="top-header">
+        <div>
+            <p class="brand-text">Balancing Chemical Equations</p>
+        </div>
+    </header>
+    <h1 class="topic">โปรแกรมสำหรับดุลสมการเคมี</h1>
+    <div>
+        <h1 class="topic" style="text-align: left;font-size: 25px;display: inline-block;">• ตัวอย่างการใส่สาร : H<sub>2</sub>O &nbsp&nbsp &#8594</h1>
+        <h1 class="topic" style="text-align: left;font-size: 25px;color: #71C8E2;display: inline-block;margin: 0px;">H2O</h1> 
+    </div>
+    <div class="molecule-input">
+        <div class="reactant">
+            <input class="left-input" type="text" />
+        </div>
+        <p style="color: black; font-family: 'Pridi', serif; display: inline-block;">
+            <span>$$ \longrightarrow $$</span>
+        </p>
+        <div class="product">
+            <input class="right-input" type="text" />
+        </div>
+    </div>
+    <div class="button-container">
+        <div class="uk-button">
+            <button class="left-button">เพิ่มช่องใส่สารตั้งต้น</button>
+            <button class="right-button">เพิ่มช่องใส่ผลิตภัณฑ์</button>
+            <button class="reset-button">Reset</button>
+            <button class="solve-button">ดุลสมการเคมี</button>
+        </div>
+    </div>
+    <div class="answer">
+        <p class="equation">สมการที่ดุลแล้วจะถูกแสดงที่นี่</p>
+    </div>
+    <h1 class="topic">โปรแกรมหาธาตุในตรางธาตุ</h1>
+    <div>
+        <h1 class="topic" style="text-align: left;font-size: 25px;">• กรอกคุณสมบัติของธาตุอย่างน้อย 1 ช่อง (ไม่จำเป็นต้องกรอกทุกช่อง)</h1>
+        <h1 class="topic" style="text-align: left;font-size: 25px;">• ถ้ากรอกหมู่จะต้องกรอกคาบด้วย</h1>
+    </div>
+    <div class="molecule-input 1">
+        <h1 class="topic" style="display: inline-block;font-size: 25px;">ธาตุ :</h1>
+        <input class="right-input1" type="text" id="atom">
+        <h1  class="topic" style="display: inline-block;font-size: 25px;">เลขอะตอม :</h1>
+        <input class="right-input1" type="number" id="num_atom">
+        <h1  class="topic" style="display: inline-block;font-size: 25px;">เลขมวล :</h1>
+        <input class="right-input1 " type="number" id="num_mass">
+        <h1  class="topic" style="display: inline-block;font-size: 25px;">หมู่ :</h1>
+        <input class="right-input1" type="text" id="num_column">
+        <h1  class="topic" style="display: inline-block;font-size: 25px;">คาบ :</h1>
+        <input class="right-input1" type="number" id="num_row">
+    </div>
+    <div class="uk-button1">
+        <button class="solve-button1" style="max-width: 600px;width: 100%;" id="button_find">ค้นหาธาตุ</button>
+    </div>
+    <div class="answer1" id="ans_element">
+        <p class="equation">ธาตุที่หาจะแสดงที่นี่</p>
+    </div>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            CommonHTML: { scale: 90 },
+            "HTML-CSS": { scale: 90 },
+            SVG: { scale: 90 }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
