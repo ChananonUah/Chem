@@ -213,5 +213,6 @@ font-weight: bolder;
         justify-content: center;
         width: 700px;
         max-width: 800px;
+        width: 100%;
     }
 }
