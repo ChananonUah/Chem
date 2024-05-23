@@ -3928,6 +3928,19 @@ const element_all = [
   
 let show_out =  document.getElementById('ans_element')
 
+function resett() {
+  document.getElementById('uk-button1').innerHTML = (`<h3 class="topic1" style="display: inline-block;">ธาตุ :</h3>
+  <input class="right-input1" type="text" id="atom">
+  <h3  class="topic1" style="display: inline-block;">เลขอะตอม :</3>
+  <input class="right-input1" type="number" id="num_atom">
+  <h3  class="topic1" style="display: inline-block;">เลขมวล :</h3>
+  <input class="right-input1 " type="number" id="num_mass">
+  <h3  class="topic1" style="display: inline-block;">หมู่ :</h3>
+  <input class="right-input1" type="text" id="num_column">
+  <h3  class="topic1" style="display: inline-block;">คาบ :</h3>
+  <input class="right-input1" type="number" id="num_row">`)
+}
+
 function find_element() {
     let atom = document.getElementById('atom').value
     let numatom = document.getElementById('num_atom').value
@@ -3935,6 +3948,7 @@ function find_element() {
     let mhoo = document.getElementById('num_column').value
     let kab = document.getElementById('num_row').value
     ans_show = ''
+    AB = ''
 
     function customRound1(number, decimalPlaces) {
       let multiplier = Math.pow(10, decimalPlaces);
@@ -3995,35 +4009,28 @@ function find_element() {
     
     if (ans.Group > 2 && ans.Group < 13) {
       if (ans.Group >= 8 && ans.Group <= 10) {
-        ans.Group = `8B`
+        AB = `8B`
       }
       else if (ans.Group > 10) {
-        ans.Group = `${ans.Group-10}B`
+        AB = `${ans.Group-10}B`
       }
       else {
-        ans.Group = `${ans.Group}B`
+        AB = `${ans.Group}B`
       }
     }
 
     else if (ans.Group > 12) {
-      ans.Group = `${ans.Group-10}A`
+      AB = `${ans.Group-10}A`
     }
 
     else {
-      ans.Group = `${ans.Group}A`
+      AB = `${ans.Group}A`
     }
 
     ans_show += `<p class="equation">{ ธาตุ : ${ans.Symbol} (${ans.Element}) } --
-    { เลขอะตอม : ${ans.AtomicNumber} } -- { เลขมวล : ${ans.AtomicMass} } -- { หมู่ : ${ans.Group} } -- { คาบ : ${ans.Period} }</p>`
+    { เลขอะตอม : ${ans.AtomicNumber} } -- { เลขมวล : ${ans.AtomicMass} } -- { หมู่ : ${AB} } -- { คาบ : ${ans.Period} }</p>`
 
     show_out.innerHTML = (ans_show);
 }
 
-
 document.getElementById('button_find').addEventListener('click', find_element);
-
-a = '2'
-
-console.log(Number(a))
-
-console.log(a+1)
