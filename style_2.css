@@ -13,9 +13,9 @@ body {
     display: flex;
     background-color: #71C8E2;
     margin-bottom: 20px;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     justify-content: center;
-    position: relative;
 }
 
 .logo-brand {
@@ -248,7 +248,7 @@ body {
 }
 
 
-@media (max-width: 600px) {
+@media screen and (max-width: 1000px) and (min-width: 500px) {
     .brand-text {
         font-size: 16px;
     }
