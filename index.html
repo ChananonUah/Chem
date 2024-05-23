@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Chemistry</title>
+    <title>Balancing Chemical Equations</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,61 +21,68 @@
 </head>
 
 <body>
-    <header class="top-header">
-        <div>
-            <p class="brand-text">Chemistry</p>
+    <header>
+        <div class="top-header">
+            <p class="brand-text">Balancing Chemical Equations</p>
         </div>
     </header>
-    <h1 class="topic">โปรแกรมสำหรับดุลสมการเคมี</h1>
-    <div>
-        <h1 class="topic" style="text-align: left;font-size: 25px;display: inline-block;">• ตัวอย่างการใส่สาร : H<sub>2</sub>O &nbsp&nbsp &#8594</h1>
-        <h1 class="topic" style="text-align: left;font-size: 25px;color: #71C8E2;display: inline-block;margin: 0px;">H2O</h1> 
-    </div>
-    <div class="molecule-input">
-        <div class="reactant">
-            <input class="left-input" type="text" />
+    <div class="box">
+        <h1 class="topic">โปรแกรมสำหรับดุลสมการเคมี</h1>
+        <div>
+            <p class="topic" style="text-align: left;display: inline-block;">• ตัวอย่างการใส่สาร : H<sub>2</sub>O &nbsp&nbsp &#8594</p>
+            <p class="topic" style="text-align: left;color: #71C8E2;display: inline-block;margin: 0px;">H2O</p> 
         </div>
-        <p style="color: black; font-family: 'Pridi', serif; display: inline-block;">
-            <span>$$ \longrightarrow $$</span>
-        </p>
-        <div class="product">
-            <input class="right-input" type="text" />
+        <div class="molecule-input">
+            <div class="reactant">
+                <input class="left-input" type="text" />
+            </div>
+            <p style="color: black; font-family: 'Pridi', serif; display: inline-block;">
+                <span>$$ \longrightarrow $$</span>
+            </p>
+            <div class="product">
+                <input class="right-input" type="text" />
+            </div>
+        </div>
+        <div class="button-container">
+            <div class="uk-button">
+                <button class="left-button">เพิ่มช่องใส่สารตั้งต้น</button>
+                <button class="right-button">เพิ่มช่องใส่ผลิตภัณฑ์</button>
+                <button class="reset-button">Reset</button>
+                <button class="solve-button">ดุลสมการเคมี</button>
+            </div>
+        </div>
+        <div class="answer">
+            <p class="equation">สมการที่ดุลแล้วจะถูกแสดงที่นี่</p>
         </div>
     </div>
-    <div class="button-container">
-        <div class="uk-button">
-            <button class="left-button">เพิ่มช่องใส่สารตั้งต้น</button>
-            <button class="right-button">เพิ่มช่องใส่ผลิตภัณฑ์</button>
-            <button class="reset-button">Reset</button>
-            <button class="solve-button">ดุลสมการเคมี</button>
+    <div class="box">
+        <h1 class="topic">โปรแกรมหาธาตุในตรางธาตุ</h1>
+            <div>
+                <p class="topic" style="text-align: left;">• กรอกคุณสมบัติของธาตุอย่างน้อย 1 ช่อง (ไม่จำเป็นต้องกรอกทุกช่อง)</p>
+                <p class="topic" style="text-align: left;">• ตัวอย่าง : หมู่ &#8594 1A 2A</p>
+                <p class="topic" style="text-align: left;">• ถ้ากรอกหมู่จะต้องกรอกคาบด้วยนะ</p>
+            </div>
+            <div class="molecule-input1">
+                <div class="uk-button1" id="uk-button1">
+                    <h3 class="topic1" style="display: inline-block;">ธาตุ :</h3>
+                    <input class="right-input1" type="text" id="atom">
+                    <h3  class="topic1" style="display: inline-block;">เลขอะตอม :</3>
+                    <input class="right-input1" type="number" id="num_atom">
+                    <h3  class="topic1" style="display: inline-block;">เลขมวล :</h3>
+                    <input class="right-input1 " type="number" id="num_mass">
+                    <h3  class="topic1" style="display: inline-block;">หมู่ :</h3>
+                    <input class="right-input1" type="text" id="num_column">
+                    <h3  class="topic1" style="display: inline-block;">คาบ :</h3>
+                    <input class="right-input1" type="number" id="num_row">
+                </div>
+            </div>
+        <div class="uk-button1">
+            <button class="reset-button1" onclick="resett()">Reset</button>
+            <button class="solve-button1" id="button_find">ค้นหาธาตุ</button>
         </div>
-    </div>
-    <div class="answer">
-        <p class="equation">สมการที่ดุลแล้วจะถูกแสดงที่นี่</p>
-    </div>
-    <h1 class="topic">โปรแกรมหาธาตุในตรางธาตุ</h1>
-    <div>
-        <h1 class="topic" style="text-align: left;font-size: 25px;">• กรอกคุณสมบัติของธาตุอย่างน้อย 1 ช่อง (ไม่จำเป็นต้องกรอกทุกช่อง)</h1>
-        <h1 class="topic" style="text-align: left;font-size: 25px;">• ตัวอย่าง : หมู่ &#8594 1A 2A</h1>
-        <h1 class="topic" style="text-align: left;font-size: 25px;">• ถ้ากรอกหมู่จะต้องกรอกคาบด้วยนะ</h1>
-    </div>
-    <div class="molecule-input 1">
-        <h1 class="topic" style="display: inline-block;font-size: 25px;">ธาตุ :</h1>
-        <input class="right-input1" type="text" id="atom">
-        <h1  class="topic" style="display: inline-block;font-size: 25px;">เลขอะตอม :</h1>
-        <input class="right-input1" type="number" id="num_atom">
-        <h1  class="topic" style="display: inline-block;font-size: 25px;">เลขมวล :</h1>
-        <input class="right-input1 " type="number" id="num_mass">
-        <h1  class="topic" style="display: inline-block;font-size: 25px;">หมู่ :</h1>
-        <input class="right-input1" type="text" id="num_column">
-        <h1  class="topic" style="display: inline-block;font-size: 25px;">คาบ :</h1>
-        <input class="right-input1" type="number" id="num_row">
-    </div>
-    <div class="uk-button1">
-        <button class="solve-button1" style="max-width: 600px;width: 100%;" id="button_find">ค้นหาธาตุ</button>
-    </div>
-    <div class="answer1" id="ans_element">
-        <p class="equation">ธาตุที่หาจะแสดงที่นี่</p>
+        <div class="answer1" id="ans_element">
+            <p class="equation">ธาตุที่หาจะแสดงที่นี่</p>
+        </div>
     </div>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
