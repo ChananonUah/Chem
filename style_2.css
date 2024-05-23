@@ -240,7 +240,7 @@ body {
 }
 
 
-@media (max-width: 600px) {
+@media screen and (max-width: 1000px) and (min-width: 500px) {
     .logo-brand {
         height: 48px;
     }
