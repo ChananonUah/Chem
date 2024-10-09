@@ -3950,36 +3950,18 @@ function find_element() {
     ans_show = ''
     AB = ''
 
-    function customRound1(number, decimalPlaces) {
-      let multiplier = Math.pow(10, decimalPlaces);
-      let roundedNumber = Math.round(number * multiplier) / multiplier;
-      let decimalPart = roundedNumber - Math.floor(roundedNumber)
-  
-      if (decimalPart >= 0.5 && decimalPart < 0.5 + Math.pow(0.1, decimalPlaces) && decimalPart > 0.5 - Math.pow(0.1, decimalPlaces)) {
-          return Math.floor(roundedNumber * multiplier) / multiplier;
-      } 
-      else if (decimalPart >= 0.5) {
-          return Math.floor(roundedNumber * multiplier) / multiplier;
-      } 
-      else {
-          return Math.ceil(roundedNumber * multiplier) / multiplier;
-      }
-  }
-
-    function customRound2(number) {
-        let roundedNumber = Math.round(number);
-        let decimalPart = number - Math.floor(number);
-    
-        if (decimalPart >= 0.45 && decimalPart < 0.55 && decimalPart > 0.5 - decimalPart) {
-            return Math.floor(number) + 0.5;
-        } 
-        else if (decimalPart >= 0.45) {
-            return Math.floor(number) + 0.5;
-        } 
-        else {
-            return Math.ceil(number);
-        }
+  function custom_round(number) {
+    number_decimal = parseInt(number.toString().substr(-3))
+    if (number_decimal > 600) {
+      return Math.floor(number+1)
     }
+    else if (number_decimal < 400) {
+      return Math.floor(number)
+    }
+    else {
+      return Math.floor(number)+0.5
+    }
+  }
     
     if (mhoo[mhoo.length-1] == 'A') {
       mhoo = mhoo.replace('A', '')
@@ -4004,9 +3986,8 @@ function find_element() {
     console.log(mhoo)
 
     let ans = element_all.find((e) => {
-        return (e.Group == mhoo && e.Period == kab) || e.Symbol == atom || e.AtomicNumber == numatom || customRound2(customRound1(e.AtomicMass, 1)) == mass
+        return (e.Group == mhoo && e.Period == kab) || e.Symbol == atom || e.AtomicNumber == numatom ||custom_round(e.AtomicMass) == mass
     })
-    
     if (ans.Group > 2 && ans.Group < 13) {
       if (ans.Group >= 8 && ans.Group <= 10) {
         AB = `8B`
@@ -4034,3 +4015,6 @@ function find_element() {
 }
 
 document.getElementById('button_find').addEventListener('click', find_element);
+
+a = 23.898
+console.log(Math.floor(a))
